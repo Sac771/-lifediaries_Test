@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom';
 
-function Update(props) {
+function Update() {
     const {id} = useParams();
     const[data,setdata]=useState('Update page')
     const[category,setcategory]=useState('')

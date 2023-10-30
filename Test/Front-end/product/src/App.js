@@ -5,7 +5,11 @@ import Category from './components/Category';
 import Product from './components/Product';
 import Update from './components/Update';
 import AddCategory from './components/Add_category';
-import ConfirmDeleteCategory from './components/ConfirmDeleteCategory';
+import ConfirmDelete from './components/ConfirmDelete';
+import ConfirmDeleteProduct from './components/ConfirmDeleteProduct';
+import Update_Product from './components/Update_product';
+import Add_product from './components/Add_product';
+
 function App() {
   return (
       <>
@@ -27,11 +31,16 @@ function App() {
           </div>
             <Routes>
                   <Route path="/" element={<Home/>}></Route>
+
+                  <Route path="/product" element={<Product/>}></Route>
+                  <Route path="/delete_product/:id" element={<ConfirmDeleteProduct/>}></Route>
+                  <Route path="/update_product/:id" element={<Update_Product/>}></Route>
+                  <Route path="/add_product" element={<Add_product/>}></Route>
+
                   <Route path="/category" element={<Category/>}></Route>
-                  {/* <Route path="/product" element={<Product/>}></Route> */}
                   <Route path="/update_category/:id" element={<Update/>}></Route>
                   <Route path="/add_category" element={<AddCategory/>}></Route>
-                  <Route path="/delete_category/:id" element={<ConfirmDeleteCategory/>}></Route>
+                  <Route path="/delete_category/:id" element={<ConfirmDelete/>}></Route>
             </Routes>
       </Router>
       </>

@@ -14,11 +14,18 @@ function Category() {
     .catch(error => {
       console.log('GET Request Error:', error);
     }); 
-    console.log(data)
-
   },[]);
 
-  if(data[0]!==''){
+  if(data[0]===undefined){
+    return (<>
+      <div  className="container border border-dark text-center mb-3 mt-3 ml-3 mr-3 p-1">This is category page</div>
+      <div  className="container border border-dark text-center mb-3 mt-3 ml-3 mr-3 p-1"> No Category found</div>
+      <button type="button" className='btn-dark bg-dark text-white'><Link to="/add_category">Add New</Link></button>
+  
+  
+    </>)
+  }
+  else{
   return (
     <>
     <div  className="container border border-dark text-center mb-3 mt-3 ml-3 mr-3 p-1">This is category page</div>
@@ -55,15 +62,7 @@ function Category() {
     </>
   )
     }
-    else{
-  return (<>
-    <div  className="container border border-dark text-center mb-3 mt-3 ml-3 mr-3 p-1">This is category page</div>
-    <div  className="container border border-dark text-center mb-3 mt-3 ml-3 mr-3 p-1"> No Category found</div>
-    <button type="button" className='btn-dark bg-dark text-white'><Link to="/add_category">Add New</Link></button>
 
-
-  </>)
-    }
   }
 
 export default Category

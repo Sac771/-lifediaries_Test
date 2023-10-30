@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import axios from 'axios'
 import { useParams,redirect } from 'react-router-dom';
 
-function Update(props) {
+function ConfirmDelete() {
     const {id} = useParams();
     const [data, setData] = useState('Confirm Delete');
     const [value, setvalue] = useState('yes');
@@ -45,4 +45,4 @@ function Update(props) {
   }
 }
 
-export default Update
+export default ConfirmDelete

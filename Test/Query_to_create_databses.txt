@@ -1,0 +1,55 @@
+before running any files you need to create this database by firing 1-3 comands
+1.
+CREATE DATABASE Product;
+
+2.
+using that specific table
+USE Product_Category;
+
+3.
+Creating table queries......
+CREATE TABLE Product_Category (
+  id integer PRIMARY KEY AUTO_INCREMENT,
+  Category_Name VARCHAR(255) NOT NULL,
+  Active_Inactive boolean default false,
+  Descr mediumtext NOT NULL
+);
+
+Creating table queries......
+CREATE TABLE Product (
+  id integer PRIMARY KEY AUTO_INCREMENT,
+  Product_name VARCHAR(255) NOT NULL,
+  Product_Category INT,
+  FOREIGN KEY (Product_Category) REFERENCES Product_Category(id) ON DELETE CASCADE,
+  cost INT NOT NULL,
+  Descr MEDIUMTEXT NOT NULL,
+  Active_Inactive BOOLEAN DEFAULT false
+);
+
+
+4.
+Inserting values queries......
+INSERT INTO Product_Category (Category_Name,Active_Inactive,Descr)
+VALUES ('category1',true,'hey there this is category-1');
+or 
+INSERT INTO Product (Product_name,Product_Category,cost,Descr,Active_Inactive)
+VALUES ('Product1',13,1000,'hey there this is product-1',true);
+
+5.
+fetching queries......
+select * from Product_Category
+
+6.
+Updating queries......
+UPDATE Product_Category     
+SET Category_Name = 'Category-3',   
+        Descr = 'hey there this is category-3'    
+WHERE id=3;
+
+7.
+json api data.....
+{
+  "Category_Name":"category-4",
+  "Active_Inactive":true,
+  "Descr":"hey there this is category-2"
+}

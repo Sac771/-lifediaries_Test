@@ -26,6 +26,15 @@ CREATE TABLE Product (
   Active_Inactive BOOLEAN DEFAULT false
 );
 
+Creating table queries......
+CREATE TABLE category (
+  id integer PRIMARY KEY AUTO_INCREMENT,
+  Product_Category INT,
+  FOREIGN KEY (Product_Category) REFERENCES Product_Category(id) ON DELETE CASCADE,
+  Product INT,
+  FOREIGN KEY (Product) REFERENCES Product(id) ON DELETE CASCADE,
+);
+
 
 4.
 Inserting values queries......

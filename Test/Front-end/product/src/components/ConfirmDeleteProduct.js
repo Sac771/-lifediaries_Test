@@ -27,7 +27,7 @@ function ConfirmDeleteProduct() {
     <>
     <div  className="container border border-dark text-center mb-3 mt-3 ml-3 mr-3 p-1">{data}</div>
     <div className=" container text-center">
-    <form onSubmit={Delete_product} action='\category'>
+    <form onSubmit={Delete_product} action='\product'>
         <div className="form-group ">
             <button type="submit" class="btn btn-success">Yes</button>
             <button type="submit" onClick={()=>{setvalue('no')}} class="btn btn-danger">No</button>

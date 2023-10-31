@@ -51,7 +51,7 @@ function Add_product() {
         <select class="form-select" aria-label="Default select example" onChange={(e)=>{setvalue2(e.target.value)}} required>
         <option value='0' selected>none</option>
                 {categorydata.map((catdata)=>{
-                    return(<option value={catdata.id}>{catdata.Category_Name}{catdata.id}</option>)
+                    return(<option value={catdata.id}>{catdata.Category_Name}</option>)
                 })}
         </select>
         </div>

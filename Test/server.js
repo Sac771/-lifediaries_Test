@@ -5,7 +5,7 @@ const DB = require('./Database.js')
 // to enable cors policy and share data to react
 const cors = require('cors');
 
-
+ 
 const app = express()
 // to pass data in JSON formate
 app.use(express.json())
@@ -22,7 +22,7 @@ app.get("/GetProducts", async (req, res) => {
 // for creating Product
 app.post("/CreateProduct", async (req, res) => {
     const { Product_name, Product_Category, cost, Descr, Active_Inactive } = req.body
-    await DB.Create_New_Product(Product_name, parseInt(Product_Category), parseInt(cost), Descr, Active_Inactive)
+    await DB.Create_New_Product(Product_name, Product_Category, parseInt(cost), Descr, Active_Inactive)
     res.status(201).send('Product created succesfully')
 })
 

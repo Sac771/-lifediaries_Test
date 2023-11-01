@@ -42,12 +42,13 @@ function Product() {
 
   function filter(ProductCategory){
     var arr=[]
-    for(let i=0;i<Object.keys(ProductCategory).length;i++){
-      arr=[...arr,parseInt(ProductCategory[i])]
+    for (const key in ProductCategory) {
+      arr = [...arr,parseInt(ProductCategory[key])];
     }
     const filteredCatData=Categorydata.filter((Cdata)=>{
       return(arr.includes(Cdata.id))
     })
+    
     if(Categorydata[0]===undefined){
       return 'none'
     }

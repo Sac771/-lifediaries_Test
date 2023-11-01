@@ -118,7 +118,7 @@ async function Update_cateogry(Column, Value, Id) {
 async function Delete_category(Id) {
 
   const [rows] = await pool.query("select * from Product")
-  
+  let updateflag=false
   rows.map( async (d)=>{
     // here we find all product and save it's category in value
     const JsonData=d.Product_Category
@@ -140,8 +140,8 @@ async function Delete_category(Id) {
     if(value.includes(Id)){
       let prod_cat={}
       value.map((element,index)=>{
-        if(element===Id){}
-        else{
+        console.log(element===Id,element,Id)
+        if(!(element===Id)){
         prod_cat[index]=element;
         }
       })
